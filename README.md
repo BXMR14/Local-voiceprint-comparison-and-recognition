@@ -1,4 +1,4 @@
-# Local-voiceprint-comparison-and-recognition
+Local-voiceprint-comparison-and-recognition
 
 本项目使用 Kivy 在本地实现声纹（voiceprint）特征提取、注册与比对，并提供桌面 EXE 与移动 APK 的打包模板。
 
@@ -47,13 +47,13 @@ python evaluate.py --dataset dataset --out results.csv
 - 要达到 99% 的识别率和 ≤0.5% 误差，需要大量高质量的训练/评估数据、噪声鲁棒性处理以及更复杂的模型与阈值调优，本仓库实现为可扩展的本地引擎基线。
 
 This project uses a noise reduction algorithm to process both parties' voices, then preserves the human voice for comparison, displaying the waveforms and characteristic peaks of both voices. Currently, this project only supports local operation.
-# Voiceprint Studio
+Voiceprint Studio
 
 Voiceprint Studio is a local client app for comparing two human voice samples. It extracts mel-band energy, MFCC voiceprint features, pitch contours, spectral brightness, voicing ratio, and energy statistics in the browser. The app then visualizes the difference map, feature balance, pitch contours, MFCC deltas, and an overall similarity score.
 
 Audio processing stays on the local device. The score is an analytic review signal and is not a legal identity decision.
 
-## Run From Source
+Run From Source
 
 ```powershell
 python .\desktop\voiceprint_launcher.py
@@ -61,7 +61,7 @@ python .\desktop\voiceprint_launcher.py
 
 The launcher starts a localhost server and opens the app in the default browser.
 
-## Build Windows EXE Installer
+Build Windows EXE Installer
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\build_windows.ps1
@@ -74,7 +74,7 @@ Outputs:
 
 The installer copies the app to `%LOCALAPPDATA%\VoiceprintStudio`, creates desktop and Start Menu shortcuts, and opens the app.
 
-## Build Android APK
+Build Android APK
 
 The Android wrapper is in `android\`. Building requires an installed Android SDK, Java 17+, and Gradle or a Gradle wrapper.
 
